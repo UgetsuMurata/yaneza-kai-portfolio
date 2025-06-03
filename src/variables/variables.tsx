@@ -39,4 +39,9 @@ const NAVIGATION_ITEMS = [
   },
 ];
 
-export { NAVIGATION_ITEMS };
+const HOME_CONTENTS = {
+  header: "Lorem ipsum dolor sit amet.",
+  content: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec at libero rhoncus lectus commodo laoreet ut in leo. Praesent vitae eleifend elit, vitae dictum eros. Fusce aliquet magna vitae laoreet condimentum. Morbi eget euismod elit. Curabitur ut justo eleifend, dictum nunc sit amet, posuere ex."
+}
+
+export { NAVIGATION_ITEMS, HOME_CONTENTS };

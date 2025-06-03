@@ -1,0 +1,13 @@
+.text-responsive {
+  font-size: clamp(1rem, 20vw, 20rem); /* min, preferred, max */
+  white-space: nowrap;
+}
+
+.text-outline-white {
+  color: transparent;
+  -webkit-text-stroke: 8px #dfeff1;
+}
+
+.custom-glow-shadow {
+  box-shadow: 0px 0px 64px 0px #00d3ea;
+}
