@@ -1,63 +1,32 @@
-import React, { type MouseEventHandler } from "react";
-import { NAVIGATION_ICONS } from "../assets/Icons";
+import React, { type MouseEventHandler, type ReactNode } from "react";
+import { NAVIGATION_ITEMS as navigationItems } from "../variables/variables";
 
 type NavigationPropsType = {
   state: number;
-  setState: React.Dispatch<React.SetStateAction<number>>;
+  setState: (item: string) => void;
+  children?: ReactNode;
 };
 export default function NavigationDisplay({
   state,
   setState,
+  children,
 }: NavigationPropsType) {
-  const navigationItems = [
-    {
-      itemId: 0,
-      item: "Home",
-      iconActive: NAVIGATION_ICONS.BIO.active,
-      iconInactive: NAVIGATION_ICONS.BIO.inactive,
-    },
-    {
-      itemId: 1,
-      item: "Skills",
-      iconActive: NAVIGATION_ICONS.SKILLS.active,
-      iconInactive: NAVIGATION_ICONS.SKILLS.inactive,
-    },
-    {
-      itemId: 2,
-      item: "Experiences",
-      iconActive: NAVIGATION_ICONS.EXPERIENCE.active,
-      iconInactive: NAVIGATION_ICONS.EXPERIENCE.inactive,
-    },
-    {
-      itemId: 3,
-      item: "Projects",
-      iconActive: NAVIGATION_ICONS.PROJECTS.active,
-      iconInactive: NAVIGATION_ICONS.PROJECTS.inactive,
-    },
-    {
-      itemId: 4,
-      item: "References",
-      iconActive: NAVIGATION_ICONS.REFERENCES.active,
-      iconInactive: NAVIGATION_ICONS.REFERENCES.inactive,
-    },
-    {
-      itemId: 5,
-      item: "Contacts",
-      iconActive: NAVIGATION_ICONS.CONTACTS.active,
-      iconInactive: NAVIGATION_ICONS.CONTACTS.inactive,
-    },
-  ];
   return (
-    <div className="flex flex-col gap-4 w-28 absolute right-12 top-12">
-      {navigationItems.map((item) => {
-        return (
-          <NavigationItem
-            {...item}
-            state={state}
-            onClick={() => setState(item.itemId)}
-          />
-        );
-      })}
+    <div className="absolute inset-0 flex flex-row">
+      <div className="w-5/6">
+        {children}
+      </div>
+      <div className="flex flex-col gap-4 w-1/6 mt-12">
+        {navigationItems.map((item) => {
+          return (
+            <NavigationItem
+              {...item}
+              state={state}
+              onClick={() => setState(item.item)}
+            />
+          );
+        })}
+      </div>
     </div>
   );
 }
@@ -88,7 +57,7 @@ function NavigationItem({
       }`}
       onClick={onClick}
     >
-      {React.cloneElement(iconActive, {
+      {React.cloneElement(state === itemId ? iconActive : iconInactive, {
         ...iconActive.props,
         className: `w-5 h-5 text-${state === itemId ? "white" : "black"}`,
       })}{" "}

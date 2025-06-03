@@ -1,0 +1,42 @@
+import { NAVIGATION_ICONS } from "../assets/Icons";
+
+const NAVIGATION_ITEMS = [
+  {
+    itemId: 0,
+    item: "Home",
+    iconActive: NAVIGATION_ICONS.BIO.active,
+    iconInactive: NAVIGATION_ICONS.BIO.inactive,
+  },
+  {
+    itemId: 1,
+    item: "Skills",
+    iconActive: NAVIGATION_ICONS.SKILLS.active,
+    iconInactive: NAVIGATION_ICONS.SKILLS.inactive,
+  },
+  {
+    itemId: 2,
+    item: "Experiences",
+    iconActive: NAVIGATION_ICONS.EXPERIENCE.active,
+    iconInactive: NAVIGATION_ICONS.EXPERIENCE.inactive,
+  },
+  {
+    itemId: 3,
+    item: "Projects",
+    iconActive: NAVIGATION_ICONS.PROJECTS.active,
+    iconInactive: NAVIGATION_ICONS.PROJECTS.inactive,
+  },
+  {
+    itemId: 4,
+    item: "References",
+    iconActive: NAVIGATION_ICONS.REFERENCES.active,
+    iconInactive: NAVIGATION_ICONS.REFERENCES.inactive,
+  },
+  {
+    itemId: 5,
+    item: "Contacts",
+    iconActive: NAVIGATION_ICONS.CONTACTS.active,
+    iconInactive: NAVIGATION_ICONS.CONTACTS.inactive,
+  },
+];
+
+export { NAVIGATION_ITEMS };
