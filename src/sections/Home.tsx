@@ -38,7 +38,7 @@ export default function Home({ setCurrentPage, id, page }: HomeType) {
         <p className="w-full text-center font-content absolute top-1/2 -translate-y-1/2 z-10 text-responsive font-bold text-white">
           KAI
         </p>
-        <div className="w-full aspect-square custom-glow-shadow absolute top-1/2 -translate-y-1/2 z-0 bg-radial-[at_50%_25%] from-primary to-primary-dark to-100% rounded-4xl" />
+        <div className="w-full aspect-square custom-glow-shadow absolute top-1/2 -translate-y-1/2 z-0 bg-radial-[at_50%_25%] from-primary to-primary-dark-900 to-130% rounded-4xl" />
       </div>
 
       {/* CONTENT */}
