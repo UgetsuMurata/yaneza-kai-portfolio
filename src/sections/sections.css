@@ -8,6 +8,11 @@
   -webkit-text-stroke: 8px #dfeff1;
 }
 
+.text-outline-primary-dark-900 {
+  color: transparent;
+  -webkit-text-stroke: 1px #0092A3;
+}
+
 .custom-glow-shadow {
   box-shadow: 0px 0px 64px 0px #00d3ea;
 }

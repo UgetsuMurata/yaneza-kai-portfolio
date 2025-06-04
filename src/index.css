@@ -1,18 +1,19 @@
-@import url('https://fonts.googleapis.com/css2?family=Aboreto&family=Kulim+Park:ital,wght@0,200;0,300;0,400;0,600;0,700;1,200;1,300;1,400;1,600;1,700&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Aboreto&family=Kulim+Park:ital,wght@0,200;0,300;0,400;0,600;0,700;1,200;1,300;1,400;1,600;1,700&display=swap");
 @import "tailwindcss";
 @theme {
-    --font-header: "Aboreto", system-ui;
-    --font-content: "Kulim Park", sans-serif;
-  
-    --color-primary: #00D3EA;
-    --color-primary-dark: #0092A3;
-    --color-primary-dark-900: #102224;
-    --color-secondary: #EA1700;
-    --color-secondary-dark: #A31100;
-    --color-black: #102224;
-    --color-white: #DFEFF1;
+  --font-header: "Aboreto", system-ui;
+  --font-content: "Kulim Park", sans-serif;
 
-    /* --animate-float-in-out: floatInOut 2.5s ease-in-out infinite;
+  --color-primary: #00d3ea;
+  --color-primary-dark: #0092a3;
+  --color-primary-dark-900: #005A64;
+  --color-secondary: #ea1700;
+  --color-secondary-dark: #a31100;
+  --color-black: #102224;
+  --color-white: #dfeff1;
+}
+
+/* --animate-float-in-out: floatInOut 2.5s ease-in-out infinite;
   
     @keyframes floatInOut {
       0% {
@@ -32,4 +33,3 @@
         transform: translateY(-20px);
       }
     } */
-  }

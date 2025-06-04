@@ -44,4 +44,73 @@ const HOME_CONTENTS = {
   content: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec at libero rhoncus lectus commodo laoreet ut in leo. Praesent vitae eleifend elit, vitae dictum eros. Fusce aliquet magna vitae laoreet condimentum. Morbi eget euismod elit. Curabitur ut justo eleifend, dictum nunc sit amet, posuere ex."
 }
 
-export { NAVIGATION_ITEMS, HOME_CONTENTS };
+const SKILLS_CONTENTS = {
+  soft_skills: [
+    {
+      skill: "skill 1",
+      measure: 5 // out of 10
+    },
+    {
+      skill: "skill 2",
+      measure: 4 // out of 10
+    },
+    {
+      skill: "skill 3",
+      measure: 2 // out of 10
+    },
+    {
+      skill: "skill 4",
+      measure: 7 // out of 10
+    },
+    {
+      skill: "skill 5",
+      measure: 10 // out of 10
+    },
+  ],
+  hard_skills: [
+    {
+      skill: "skill 1",
+      measure: 3 // out of 10
+    },
+    {
+      skill: "skill 2",
+      measure: 8 // out of 10
+    },
+    {
+      skill: "skill 3",
+      measure: 8 // out of 10
+    },
+    {
+      skill: "skill 4",
+      measure: 4 // out of 10
+    },
+    {
+      skill: "skill 5",
+      measure: 1 // out of 10
+    },
+  ],
+  tech_stack: [
+    {
+      skill: "skill 1",
+      measure: 2 // out of 10
+    },
+    {
+      skill: "skill 2",
+      measure: 9 // out of 10
+    },
+    {
+      skill: "skill 3",
+      measure: 1 // out of 10
+    },
+    {
+      skill: "skill 4",
+      measure: 5 // out of 10
+    },
+    {
+      skill: "skill 5",
+      measure: 10 // out of 10
+    },
+  ]
+}
+
+export { NAVIGATION_ITEMS, HOME_CONTENTS, SKILLS_CONTENTS };

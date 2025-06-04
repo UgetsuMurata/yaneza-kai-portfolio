@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import NavigationDisplay from "../component/NavigationDisplay";
 import Home from "../sections/Home";
 import Skills from "../sections/Skills";
@@ -13,7 +13,7 @@ export default function Main() {
   const [currentPage, setCurrentPage] = useState(0);
 
   return (
-    <div className="font-content w-full h-screen relative bg-primary-dark-900 overflow-hidden">
+    <div className="font-content w-full h-screen relative bg-black overflow-hidden">
       {/* NAVIGATION ICONS */}
       <div className="absolute inset-0 z-20">
         <NavigationDisplay state={currentPage} setState={scrollToSection}>
