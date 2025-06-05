@@ -13,6 +13,38 @@
   --color-white: #dfeff1;
 }
 
+/* OTHER CSS PROPERTIES */
+.custom-glow-shadow {
+  box-shadow: 0px 0px 64px 0px #00d3ea;
+}
+
+.custom-glow-shadow-lg {
+  box-shadow: 0px 0px 12px 0px #00d3ea;
+}
+
+.custom-glow-shadow-sm {
+  box-shadow: 0px 0px 8px 0px #00d3ea60;
+}
+
+.custom-glow-shadow-sm-red {
+  box-shadow: 0px 0px 8px 0px #ea1700;
+}
+
+.custom-glow-shadow-sm-white {
+  box-shadow: 0px 0px 8px 0px #dfeff1;
+}
+
+/* Hide scrollbar for Chrome, Safari and Opera */
+.no-scrollbar::-webkit-scrollbar {
+    display: none;
+}
+
+/* Hide scrollbar for IE, Edge and Firefox */
+.no-scrollbar {
+    -ms-overflow-style: none;  /* IE and Edge */
+    scrollbar-width: none;  /* Firefox */
+}
+
 /* --animate-float-in-out: floatInOut 2.5s ease-in-out infinite;
   
     @keyframes floatInOut {

@@ -51,7 +51,10 @@ export default function Skills({ setCurrentPage, id, page }: SkillsType) {
 
     const handleScroll = (e: WheelEvent) => {
       const currentShown = shownRef.current;
-      if ((currentShown >= 2 && e.deltaY > 0) || (currentShown <= 0 && e.deltaY < 0)) {
+      if (
+        (currentShown >= 2 && e.deltaY > 0) ||
+        (currentShown <= 0 && e.deltaY < 0)
+      ) {
         window.removeEventListener("wheel", handleScroll);
         return;
       }
@@ -156,72 +159,84 @@ export default function Skills({ setCurrentPage, id, page }: SkillsType) {
           className="absolute h-screen w-1/2 object-contain z-10"
         />
         {/* CONTENTS */}
-        <div className="absolute w-1/2 z-20 flex flex-col items-center top-12 bottom-12 right-0 py-12 px-12 gap-20">
+        <div className="absolute w-2/3 z-20 flex flex-col items-end top-12 bottom-12 right-0 py-12 px-12">
           {/* LIST OF SKILLS */}
-          <div className="flex flex-col">
-            <div>
+          <div className="flex-1 flex flex-col w-fit justify-center items-center">
+            <div className="flex flex-col items-end">
               {skillList.map((value) => {
                 return <SkillItem value={value} />;
               })}
             </div>
-            <Radar
-              data={dataList}
-              options={{
-                scales: {
-                  r: {
-                    max: 10,
-                    ticks: {
-                      display: false,
-                      stepSize: 2,
+            <div className="flex-1 w-full">
+              <Radar
+                data={dataList}
+                options={{
+                  responsive: true,
+                  maintainAspectRatio: false,
+                  layout: { padding: 0 },
+                  scales: {
+                    r: {
+                      min: 0,
+                      max: 10,
+                      ticks: {
+                        display: false,
+                        stepSize: 2,
+                      },
+                      pointLabels: {
+                        font: {
+                          family: getCSSVar("--font-content"),
+                          size: 12,
+                          weight: "bold",
+                        },
+                        color: hexToRGBA(
+                          getCSSVar("--color-primary-dark-900"),
+                          1
+                        ),
+                      },
+                      grid: {
+                        color: hexToRGBA(
+                          getCSSVar("--color-secondary-dark"),
+                          1
+                        ),
+                      },
+                      angleLines: {
+                        display: true,
+                        color: hexToRGBA(
+                          getCSSVar("--color-secondary-dark"),
+                          0.3
+                        ),
+                      },
                     },
-                    pointLabels: {
-                      font: {
+                  },
+                  plugins: {
+                    legend: { display: false },
+                    tooltip: {
+                      backgroundColor: hexToRGBA(
+                        getCSSVar("--color-black"),
+                        0.5
+                      ),
+                      borderColor: hexToRGBA(getCSSVar("--color-black"), 1),
+                      borderWidth: 1,
+                      titleFont: {
+                        family: getCSSVar("--font-content"),
+                        size: 14,
+                      },
+                      bodyFont: {
                         family: getCSSVar("--font-content"),
                         size: 12,
-                        weight: "bold",
                       },
-                      color: hexToRGBA(
-                        getCSSVar("--color-primary-dark-900"),
-                        1
-                      ),
-                    },
-                    grid: {
-                      color: hexToRGBA(getCSSVar("--color-secondary-dark"), 1),
-                    },
-                    angleLines: {
-                      display: true,
-                      color: hexToRGBA(
-                        getCSSVar("--color-secondary-dark"),
-                        0.3
-                      ),
-                    },
-                  },
-                },
-                plugins: {
-                  legend: { display: false },
-                  tooltip: {
-                    backgroundColor: hexToRGBA(getCSSVar("--color-black"), 0.5),
-                    borderColor: hexToRGBA(getCSSVar("--color-black"), 1),
-                    borderWidth: 1,
-                    titleFont: {
-                      family: getCSSVar("--font-content"),
-                      size: 14,
-                    },
-                    bodyFont: {
-                      family: getCSSVar("--font-content"),
-                      size: 12,
-                    },
-                    callbacks: {
-                      // Optional: Customize tooltip content
-                      label: function (context) {
-                        return ` ${context.formattedValue}/10`;
+                      callbacks: {
+                        // Optional: Customize tooltip content
+                        label: function (context) {
+                          return ` ${context.formattedValue}/10`;
+                        },
                       },
                     },
                   },
-                },
-              }}
-              redraw
-            />
+                }}
+                redraw
+              />
+            </div>
           </div>
         </div>
       </div>
@@ -240,7 +255,7 @@ type SkillItemType = {
 function SkillItem({ value }: SkillItemType) {
   return (
     <div className="flex flex-row gap-2 items-center">
-      <p className="font-content text-xl font-bold text-white shadow-2xl">
+      <p className="font-content text-responsive-skill font-bold text-white shadow-2xl">
         {value.skill}
       </p>
       <div className="flex flex-row gap-1">

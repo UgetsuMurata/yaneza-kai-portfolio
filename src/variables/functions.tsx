@@ -1,3 +1,6 @@
+import React from "react";
+import type { ReactNode } from "react";
+
 function hexToRGBA(hex: string, alpha: number): string {
   hex = hex.replace("#", "");
   const bigint = parseInt(hex, 16);
@@ -13,4 +16,12 @@ function getCSSVar(name: string): string {
     .trim();
 }
 
-export { hexToRGBA, getCSSVar };
+function cloneReactIcon(
+  icon: React.DetailedReactHTMLElement<any, HTMLElement>,
+  props?: any,
+  className?: string
+): React.DetailedReactHTMLElement<any, HTMLElement> {
+  return React.cloneElement(icon, { ...props, className: className });
+}
+
+export { hexToRGBA, getCSSVar, cloneReactIcon };
