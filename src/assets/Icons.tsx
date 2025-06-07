@@ -8,7 +8,7 @@ import {
   PiOfficeChairFill,
   PiOfficeChairLight,
   PiMedalFill,
-  PiMedalLight
+  PiMedalLight,
 } from "react-icons/pi";
 import {
   BsLaptop,
@@ -17,8 +17,17 @@ import {
   BsTelephoneFill,
 } from "react-icons/bs";
 import { RiGraduationCapFill, RiGraduationCapLine } from "react-icons/ri";
-import { AiOutlineFacebook, AiOutlineInstagram, AiOutlineLinkedin, AiOutlineGithub } from "react-icons/ai";
-import { FaViber } from "react-icons/fa6";
+import {
+  AiOutlineFacebook,
+  AiOutlineInstagram,
+  AiOutlineLinkedin,
+  AiOutlineGithub,
+} from "react-icons/ai";
+import {
+  FaViber,
+  FaCircleChevronLeft,
+  FaCircleChevronRight,
+} from "react-icons/fa6";
 import { BiLogoGmail } from "react-icons/bi";
 
 const NAVIGATION_ICONS = {
@@ -63,43 +72,50 @@ const EXPERIENCES_ICONS = {
   },
 };
 
+const GENERAL_ICONS = {
+  email: <BiLogoGmail />,
+  telephone: <BsTelephone />,
+  left: <FaCircleChevronLeft />,
+  right: <FaCircleChevronRight />,
+};
+
 const CONTACTS_ICONS = [
   {
     social: "Facebook",
-    icon: <AiOutlineFacebook/>,
+    icon: <AiOutlineFacebook />,
     username: "@yanezakai",
-    link: "https://www.facebook.com/yanezakai"
+    link: "https://www.facebook.com/yanezakai",
   },
   {
     social: "Instagram",
-    icon: <AiOutlineInstagram/>,
+    icon: <AiOutlineInstagram />,
     username: "@theskyler08",
-    link: "https://www.instagram.com/theskyler08/"
+    link: "https://www.instagram.com/theskyler08/",
   },
   {
     social: "Viber",
-    icon: <FaViber/>,
+    icon: <FaViber />,
     username: "09944344112",
-    link: undefined
+    link: undefined,
   },
   {
     social: "LinkedIn",
-    icon: <AiOutlineLinkedin/>,
+    icon: <AiOutlineLinkedin />,
     username: "yaneza-kai",
-    link: "https://www.linkedin.com/in/kai-yaneza/"
+    link: "https://www.linkedin.com/in/kai-yaneza/",
   },
   {
     social: "Github",
-    icon: <AiOutlineGithub/>,
+    icon: <AiOutlineGithub />,
     username: "UgetsuMurata",
-    link: "https://github.com/UgetsuMurata"
+    link: "https://github.com/UgetsuMurata",
   },
   {
     social: "GMail",
-    icon: <BiLogoGmail/>,
+    icon: <BiLogoGmail />,
     username: "yanezakai@gmail.com",
-    link: "mailto:yanezakai@gmail.com"
+    link: "mailto:yanezakai@gmail.com",
   },
-]
+];
 
-export { NAVIGATION_ICONS, EXPERIENCES_ICONS, CONTACTS_ICONS };
+export { NAVIGATION_ICONS, EXPERIENCES_ICONS, CONTACTS_ICONS, GENERAL_ICONS };

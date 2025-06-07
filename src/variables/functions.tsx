@@ -15,12 +15,18 @@ function getCSSVar(name: string): string {
     .trim();
 }
 
-function cloneReactIcon<T extends HTMLElement>(
-  icon: React.DetailedReactHTMLElement<React.HTMLAttributes<T>, T>,
-  props?: React.HTMLAttributes<T>,
-  className?: React.HTMLAttributes<T>["className"]
-): React.DetailedReactHTMLElement<React.HTMLAttributes<T>, T> {
-  return React.cloneElement(icon, { ...props, className });
+function cloneReactIcon(
+  icon: React.ReactElement<{ className?: string }>,
+  props?: React.HTMLAttributes<HTMLElement>,
+  className?: string
+): React.ReactElement {
+  const combinedClassName = [props?.className, className]
+    .filter(Boolean)
+    .join(" ");
+  return React.cloneElement(icon, {
+    ...props,
+    className: combinedClassName,
+  });
 }
 
 export { hexToRGBA, getCSSVar, cloneReactIcon };
