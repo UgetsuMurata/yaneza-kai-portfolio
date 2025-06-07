@@ -1,5 +1,4 @@
 import React from "react";
-import type { ReactNode } from "react";
 
 function hexToRGBA(hex: string, alpha: number): string {
   hex = hex.replace("#", "");
@@ -16,12 +15,12 @@ function getCSSVar(name: string): string {
     .trim();
 }
 
-function cloneReactIcon(
-  icon: React.DetailedReactHTMLElement<any, HTMLElement>,
-  props?: any,
-  className?: string
-): React.DetailedReactHTMLElement<any, HTMLElement> {
-  return React.cloneElement(icon, { ...props, className: className });
+function cloneReactIcon<T extends HTMLElement>(
+  icon: React.DetailedReactHTMLElement<React.HTMLAttributes<T>, T>,
+  props?: React.HTMLAttributes<T>,
+  className?: React.HTMLAttributes<T>["className"]
+): React.DetailedReactHTMLElement<React.HTMLAttributes<T>, T> {
+  return React.cloneElement(icon, { ...props, className });
 }
 
 export { hexToRGBA, getCSSVar, cloneReactIcon };

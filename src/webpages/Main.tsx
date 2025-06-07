@@ -6,7 +6,6 @@ import Experiences from "../sections/Experiences";
 import Projects from "../sections/Projects";
 import References from "../sections/References";
 import Contacts from "../sections/Contacts";
-import "./Main.css";
 import { NAVIGATION_ITEMS } from "../variables/variables";
 
 export default function Main() {
@@ -23,7 +22,9 @@ export default function Main() {
 
       {/* BACKGROUND */}
       <div className="z-0 absolute inset-0">
-        <div className="absolute inset-0 backdrop-blur-sm z-10" />
+        {currentPage !== 5 && (
+          <div className="absolute inset-0 backdrop-blur-sm z-10" />
+        )}
         <div className="absolute bottom-5 left-1/2 -translate-x-1/2 w-4/5 aspect-square outline-primary outline-[100px] rounded-full bg-transparent z-0" />
       </div>
     </div>
