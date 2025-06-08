@@ -75,17 +75,10 @@ export default function References({
           />
 
           {/* Floating text positioned exactly on top of the white name */}
-          <p
-            className="absolute z-20 font-content text-6xl font-bold text-outline-white-sm pointer-events-none"
-            style={{
-              top: `${position.top}px`,
-              left: `${position.left}px`,
-            }}
-          >
+          <p className="absolute ps-4 py-12 top-1/2 -translate-y-1/2 z-20 font-content text-6xl font-bold text-outline-white-sm pointer-events-none">
             {currentReference.name}
           </p>
 
-          {/* SCROLLABLE TEXT CONTENT OVERLAY */}
           <div className="py-12 ps-4 h-full overflow-hidden flex flex-col justify-evenly z-0 relative">
             <p className="font-content text-6xl font-bold text-outline-white-sm">
               {currentReference.name}
@@ -96,10 +89,7 @@ export default function References({
             <p className="font-content text-6xl font-bold text-outline-white-sm">
               {currentReference.name}
             </p>
-            <p
-              ref={referenceRef}
-              className="font-content text-6xl font-bold text-white"
-            >
+            <p className="font-content text-6xl font-bold text-white">
               {currentReference.name}
             </p>
             <p className="font-content text-6xl font-bold text-outline-white-sm">

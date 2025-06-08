@@ -48,8 +48,8 @@ const NAVIGATION_ITEMS = [
 ];
 
 const HOME_CONTENTS = {
-  header: "Lorem ipsum dolor sit amet.",
-  content: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec at libero rhoncus lectus commodo laoreet ut in leo. Praesent vitae eleifend elit, vitae dictum eros. Fusce aliquet magna vitae laoreet condimentum. Morbi eget euismod elit. Curabitur ut justo eleifend, dictum nunc sit amet, posuere ex."
+  header: "I Build, I Design, I Manage — I Make Ideas Real.",
+  content: "Need a reliable team player who can manage, build, design, or test your digital solutions? I’m Kai Yaneza—legally known as Lloyd Jemuel L. Yaneza—a flexible and driven IT graduate with hands-on experience across multiple roles in tech. From leading projects and developing systems to crafting user interfaces and performing quality assurance, I bring a well-rounded, adaptable skill set to any team. I thrive in dynamic environments and am eager to contribute to innovative companies that value versatility, initiative, and collaboration."
 }
 
 const SKILLS_CONTENTS = {
