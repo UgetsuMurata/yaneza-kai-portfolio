@@ -76,7 +76,7 @@ function ContactContainer({ social, icon, username, link }: ContactType) {
   return (
     <div
       className="relative w-28 h-28 flex items-center justify-center"
-      style={{ perspective: "600px" }} // Optional: Move here for smoother tilt
+      style={{ perspective: "300px" }} // Optional: Move here for smoother tilt
     >
       {/* Hover Card */}
       {isHovered && (

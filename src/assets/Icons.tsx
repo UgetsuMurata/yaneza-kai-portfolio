@@ -1,5 +1,5 @@
 import { MdDescription, MdOutlineDescription } from "react-icons/md";
-import { IoHammer, IoHammerOutline } from "react-icons/io5";
+import { IoHammer, IoHammerOutline, IoSearch } from "react-icons/io5";
 import {
   PiCertificateFill,
   PiCertificateLight,
@@ -77,6 +77,7 @@ const GENERAL_ICONS = {
   telephone: <BsTelephone />,
   left: <FaCircleChevronLeft />,
   right: <FaCircleChevronRight />,
+  search: <IoSearch />,
 };
 
 const CONTACTS_ICONS = [

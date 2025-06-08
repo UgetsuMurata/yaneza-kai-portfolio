@@ -133,6 +133,57 @@ const SKILLS_CONTENTS = {
   ]
 }
 
+const PROJECTS_CATEGORIES = [
+  {
+    id: "all",
+    name: "All Projects",
+    emoji: "⌨️"
+  },
+  {
+    id: "graphic",
+    name: "Graphic Design",
+    emoji: "🎨"
+  },
+  {
+    id: "ui-ux",
+    name: "UI/UX Design",
+    emoji: "🖌️"
+  },
+  {
+    id: "mobile",
+    name: "Mobile Development",
+    emoji: "📱"
+  },
+  {
+    id: "software",
+    name: "Software Development",
+    emoji: "💻"
+  },
+  {
+    id: "website",
+    name: "Website Development",
+    emoji: "🌐"
+  },
+  {
+    id: "game",
+    name: "Game Development",
+    emoji: "🎮"
+  },
+]
+
+const PROJECTS_CONTENTS = [
+  {
+    id: "unleash-landing-page",
+    tags: "website",
+    maincolor: "#003ABB",
+    name: "Unleash Landing Page",
+    date_created: 20250228,
+    description: "This landing page is created using ReactJS. It is used as the official website for Unleash PH, a pet social media app developed by Highly Succeed Inc.",
+    link: "https://unleash.ph/",
+    totalImages: 8,
+  },
+]
+
 const REFRENCES_CONTENTS = [
   {
     img: joymie_fuentes,
@@ -250,4 +301,4 @@ const EXPERIENCE_CONTENTS = {
   ]
 }
 
-export { NAVIGATION_ITEMS, HOME_CONTENTS, SKILLS_CONTENTS, REFRENCES_CONTENTS, EXPERIENCE_CONTENTS };
+export { NAVIGATION_ITEMS, HOME_CONTENTS, SKILLS_CONTENTS, PROJECTS_CATEGORIES, PROJECTS_CONTENTS, REFRENCES_CONTENTS, EXPERIENCE_CONTENTS };
