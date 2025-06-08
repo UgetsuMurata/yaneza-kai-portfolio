@@ -1,4 +1,4 @@
-import React, { type MouseEventHandler, type ReactNode } from "react";
+import { type MouseEventHandler, type ReactNode } from "react";
 import { NAVIGATION_ITEMS as navigationItems } from "../variables/variables";
 import { cloneReactIcon } from "../variables/functions";
 
