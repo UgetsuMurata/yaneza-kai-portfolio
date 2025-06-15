@@ -3,8 +3,6 @@ import { IoHammer, IoHammerOutline, IoSearch } from "react-icons/io5";
 import {
   PiCertificateFill,
   PiCertificateLight,
-  PiUsersThreeFill,
-  PiUsersThreeLight,
   PiOfficeChairFill,
   PiOfficeChairLight,
   PiMedalFill,
@@ -46,10 +44,6 @@ const NAVIGATION_ICONS = {
   PROJECTS: {
     active: <BsLaptopFill />,
     inactive: <BsLaptop />,
-  },
-  REFERENCES: {
-    active: <PiUsersThreeFill />,
-    inactive: <PiUsersThreeLight />,
   },
   CONTACTS: {
     active: <BsTelephoneFill />,

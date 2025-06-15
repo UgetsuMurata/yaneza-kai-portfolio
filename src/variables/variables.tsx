@@ -6,7 +6,6 @@ import dsr_achievement from "../assets/img/certificates/developer_stack_rank.jpg
 import topcit_certificate from "../assets/img/certificates/topcit_thumbnail.jpg";
 import topcit_certificate_full from "../assets/img/certificates/topcit_certificate.jpg";
 import google_ai_certificate from "../assets/img/certificates/google_ai_thumbnail.jpg";
-import joymie_fuentes from "../assets/img/references/joymie_fuentes.png";
 
 const NAVIGATION_ITEMS = [
   {
@@ -32,12 +31,6 @@ const NAVIGATION_ITEMS = [
     item: "Projects",
     iconActive: NAVIGATION_ICONS.PROJECTS.active,
     iconInactive: NAVIGATION_ICONS.PROJECTS.inactive,
-  },
-  {
-    itemId: 4,
-    item: "References",
-    iconActive: NAVIGATION_ICONS.REFERENCES.active,
-    iconInactive: NAVIGATION_ICONS.REFERENCES.inactive,
   },
   {
     itemId: 5,
@@ -238,28 +231,6 @@ const PROJECTS_CONTENTS = [
   },
 ]
 
-const REFRENCES_CONTENTS = [
-  {
-    img: joymie_fuentes,
-    name: "JOYMIE FUENTES",
-    position: "HR Associate/University and Training Coordinator",
-    company: "Highly Succeed Inc.",
-    contacts: [
-      {
-        icon: GENERAL_ICONS.email,
-        value: "email@gmail.com",
-        link: "mailto:email@gmail.com"
-      },
-      {
-        icon: GENERAL_ICONS.telephone,
-        value: "(+63) 912 345 6789",
-        link: undefined
-      }
-    ],
-    linkedin: "https://www.linkedin.com/in/joymie-fuentes-8ba87722a/"
-  }
-]
-
 const EXPERIENCE_CONTENTS = {
   ACADEMIC: [
     {
@@ -355,4 +326,4 @@ const EXPERIENCE_CONTENTS = {
   ]
 }
 
-export { NAVIGATION_ITEMS, HOME_CONTENTS, SKILLS_CONTENTS, PROJECTS_CATEGORIES, PROJECTS_CONTENTS, REFRENCES_CONTENTS, EXPERIENCE_CONTENTS };
+export { NAVIGATION_ITEMS, HOME_CONTENTS, SKILLS_CONTENTS, PROJECTS_CATEGORIES, PROJECTS_CONTENTS, EXPERIENCE_CONTENTS };

@@ -4,7 +4,6 @@ import Home from "../sections/Home";
 import Skills from "../sections/Skills";
 import Experiences from "../sections/Experiences";
 import Projects from "../sections/Projects";
-import References from "../sections/References";
 import Contacts from "../sections/Contacts";
 import { NAVIGATION_ITEMS } from "../variables/variables";
 
@@ -58,15 +57,10 @@ function ContentManager({ setCurrentPage }: ContentManagerType) {
         id={NAVIGATION_ITEMS[3].item}
         page={NAVIGATION_ITEMS[3].itemId}
       />
-      <References
+      <Contacts
         setCurrentPage={setCurrentPage}
         id={NAVIGATION_ITEMS[4].item}
         page={NAVIGATION_ITEMS[4].itemId}
-      />
-      <Contacts
-        setCurrentPage={setCurrentPage}
-        id={NAVIGATION_ITEMS[5].item}
-        page={NAVIGATION_ITEMS[5].itemId}
       />
     </div>
   );

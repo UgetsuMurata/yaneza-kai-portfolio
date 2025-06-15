@@ -99,21 +99,23 @@ export default function Projects({ setCurrentPage, id, page }: ProjectsType) {
             </div>
             <p className="font-header text-4xl flex-1">PROJECT OVERVIEW</p>
           </div>
-          <div className="flex-1 flex flex-row">
-            <div className="w-1/2 h-full grid grid-cols-3 gap-2 overflow-y-auto p-2">
-              {Array.from({ length: project.totalImages }).map((_, index) => (
-                <img
-                  key={index}
-                  src={`/projects/${project.id}/images/${index}.png`}
-                  alt={`Image ${index}`}
-                  onClick={() =>
-                    setOverlayImage(
-                      `/projects/${project.id}/images/${index}.png`
-                    )
-                  }
-                  className="w-full h-full rounded-xl object-contain cursor-pointer brightness-90 hover:brightness-100"
-                />
-              ))}
+          <div className="flex-1 flex flex-row min-h-0">
+            <div className="w-1/2 h-full overflow-y-auto no-scrollbar p-2">
+              <div className="flex flex-wrap gap-4">
+                {Array.from({ length: project.totalImages }).map((_, index) => (
+                  <img
+                    key={index}
+                    src={`/projects/${project.id}/images/${index}.png`}
+                    alt={`Image ${index}`}
+                    onClick={() =>
+                      setOverlayImage(
+                        `/projects/${project.id}/images/${index}.png`
+                      )
+                    }
+                    className="w-auto h-32 rounded-xl object-contain cursor-pointer brightness-90 hover:brightness-100"
+                  />
+                ))}
+              </div>
             </div>
             <div className="w-1/2 h-full flex flex-col">
               <div className="flex-1 w-full">
