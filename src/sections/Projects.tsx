@@ -104,11 +104,11 @@ export default function Projects({ setCurrentPage, id, page }: ProjectsType) {
               {Array.from({ length: project.totalImages }).map((_, index) => (
                 <img
                   key={index}
-                  src={`/projects/unleash-landing-page/images/${index}.png`}
+                  src={`/projects/${project.id}/images/${index}.png`}
                   alt={`Image ${index}`}
                   onClick={() =>
                     setOverlayImage(
-                      `/projects/unleash-landing-page/images/${index}.png`
+                      `/projects/${project.id}/images/${index}.png`
                     )
                   }
                   className="w-full h-full rounded-xl object-contain cursor-pointer brightness-90 hover:brightness-100"
@@ -234,6 +234,7 @@ function ProjectContainer({
 
   return (
     <div
+      id={id}
       ref={containerRef}
       className="relative w-52 h-30 flex items-center justify-center"
       style={{ perspective: "300px" }}
