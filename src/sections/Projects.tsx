@@ -70,7 +70,8 @@ export default function Projects({ setCurrentPage, id, page }: ProjectsType) {
             </div>
 
             {/* PROJECTS DISPLAY*/}
-            <div className="grid grid-cols-4 gap-2 flex-1">
+
+            <div className="flex flex-wrap gap-4 w-fit h-fit">
               {projectsList(PROJECTS_CONTENTS, currentCategory).map((value) => (
                 <ProjectContainer
                   {...value}
@@ -148,7 +149,9 @@ export default function Projects({ setCurrentPage, id, page }: ProjectsType) {
             src={overlayImage}
             alt="Expanded"
             className="max-w-[90vw] max-h-[90vh] rounded-xl shadow-lg"
-            onClick={(e) => {e.stopPropagation()}}
+            onClick={(e) => {
+              e.stopPropagation();
+            }}
           />
         </div>
       )}
@@ -203,6 +206,7 @@ function ProjectContainer({
   setOpenProject,
 }: ProjectContainerType) {
   const cardRef = useRef<HTMLDivElement>(null);
+  const containerRef = useRef<HTMLDivElement>(null);
   const [isHovered, setIsHovered] = useState(false);
   const [rotation, setRotation] = useState({ x: 0, y: 0 });
 
@@ -213,7 +217,7 @@ function ProjectContainer({
     const x = e.clientX - rect.left;
     const y = e.clientY - rect.top;
 
-    const rotateX = (y / rect.height - 0.5) * -20; // rotate between -10 to 10 deg
+    const rotateX = (y / rect.height - 0.5) * -20;
     const rotateY = (x / rect.width - 0.5) * 20;
 
     setRotation({ x: rotateX, y: rotateY });
@@ -227,10 +231,14 @@ function ProjectContainer({
     setIsHovered(false);
     setRotation({ x: 0, y: 0 });
   };
+
   return (
     <div
-      className="relative w-full h-30 flex items-center justify-center"
-      style={{ perspective: "300px" }} // Optional: Move here for smoother tilt
+      ref={containerRef}
+      className="relative w-52 h-30 flex items-center justify-center"
+      style={{ perspective: "300px" }}
+      onMouseEnter={handleMouseEnter}
+      onMouseLeave={handleMouseLeave}
     >
       {/* HOVER ELEMENTS */}
       {isHovered && (
@@ -241,18 +249,7 @@ function ProjectContainer({
             transform: `perspective(600px) rotateX(${rotation.x}deg) rotateY(${rotation.y}deg)`,
             transition: "transform 0.05s ease-out",
           }}
-          onMouseMove={(e) => {
-            e.stopPropagation();
-            handleMouseMove(e);
-          }}
-          onMouseEnter={(e) => {
-            e.stopPropagation();
-            handleMouseEnter();
-          }}
-          onMouseLeave={(e) => {
-            e.stopPropagation();
-            handleMouseLeave();
-          }}
+          onMouseMove={handleMouseMove}
           onClick={() => {
             setOpenProject(true);
             setProject({
@@ -273,7 +270,9 @@ function ProjectContainer({
             alt="thumbnail"
             className="w-full h-20 object-contain"
           />
-          <p className="font-semibold text-primary-dark">{name}</p>
+          <p className="font-semibold" style={{ color: `${maincolor}99` }}>
+            {name}
+          </p>
           <p className="text-sm text-black">{formatDate(date_created)}</p>
         </div>
       )}
@@ -284,7 +283,6 @@ function ProjectContainer({
         className={`w-full h-30 rounded-2xl ${
           isHovered ? "bg-transparent" : "bg-white"
         } flex flex-col justify-between items-center p-2`}
-        onMouseEnter={handleMouseEnter}
       >
         <img
           src={`/projects/${id}/thumbnail.png`}
@@ -292,9 +290,10 @@ function ProjectContainer({
           className={`w-full h-20 object-contain ${isHovered ? "hidden" : ""}`}
         />
         <p
-          className={`font-content font-bold text-${maincolor}/60 w-full text-center ${
+          className={`font-content font-bold w-full text-center ${
             isHovered ? "hidden" : ""
           }`}
+          style={{ color: `${maincolor}99` }}
         >
           {name}
         </p>

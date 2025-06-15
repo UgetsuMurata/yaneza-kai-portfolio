@@ -211,7 +211,7 @@ const PROJECTS_CONTENTS = [
   }, {
     id: "mono-2",
     tags: "game software",
-    maincolor: "#00ffe7",
+    maincolor: "#008a7d",
     name: "Mono²",
     date_created: 20220222,
     description: "Mono² is a console-based card pairing game I developed in Python, using linked lists to manage game logic in a simplified simulation of the traditional \"Unggoy Unggoyan\" game. Designed to be played in Player vs Player and Player vs Computer, the game uses text-based UI with ASCII visuals and coin-flip logic to determine turns. My role covered the full development lifecycle—from logic implementation to UI flow. The project not only reinforced my understanding of data structures but also turned out to be a fun and functional way to demonstrate algorithmic thinking in game design.",
