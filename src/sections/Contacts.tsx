@@ -15,21 +15,34 @@ export default function Contacts({ setCurrentPage, id, page }: ContactsType) {
     threshold: 0.6, // at least 60% of the section must be visible
   });
 
+  const [circle1, setCircle1] = useState("-left-1/2");
+  const [circle2, setCircle2] = useState("left-[150%]");
+
   useEffect(() => {
     if (inView) setCurrentPage(page);
+  }, [inView]);
+
+  useEffect(() => {
+    if (inView) {
+      setCircle1("left-1/2");
+      setCircle2("left-1/2");
+    } else {
+      setCircle1("-left-1/2");
+      setCircle2("left-[150%]");
+    }
   }, [inView]);
 
   return (
     <div
       id={id}
       ref={ref}
-      className="snap-start snap-always w-full h-screen flex-shrink-0 flex flex-col gap-16 justify-center"
+      className="snap-start snap-always w-full h-screen relative flex-shrink-0 flex flex-col gap-16 justify-center overflow-clip"
     >
       <div className="flex flex-col gap-4">
-      <img src={logo} alt="logo" className="h-20 object-contain" />
-      <p className="font-header text-white w-full text-center text-4xl">
-        Contacts
-      </p>
+        <img src={logo} alt="logo" className="h-20 object-contain" />
+        <p className="font-header text-white w-full text-center text-4xl">
+          Contacts
+        </p>
       </div>
       {/* CONTACTS */}
       <div className="flex flex-row flex-wrap justify-evenly w-96 mx-auto">
@@ -37,6 +50,13 @@ export default function Contacts({ setCurrentPage, id, page }: ContactsType) {
           return <ContactContainer {...values} />;
         })}
       </div>
+
+      <div
+        className={`absolute outline-primary-dark outline-[100px] top-1/2 ${circle1} w-[1000px] h-[1000px] -translate-1/2 rounded-full bg-transparent z-0 transition-all duration-1000 ease-in-out`}
+      />
+      <div
+        className={`absolute outline-primary outline-[50px] top-1/2 ${circle2} w-[750px] h-[750px] -translate-1/2 rounded-full bg-transparent z-0 transition-all duration-1000 ease-in-out`}
+      />
     </div>
   );
 }

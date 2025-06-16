@@ -1,4 +1,4 @@
-import { GENERAL_ICONS, NAVIGATION_ICONS } from "../assets/Icons";
+import { NAVIGATION_ICONS } from "../assets/Icons";
 import cnsc_logo from "../assets/img/logos/cnsc.png";
 import hsi_logo from "../assets/img/logos/hsi.png";
 import default_work_logo from "../assets/img/logos/default_work.png";
@@ -33,7 +33,7 @@ const NAVIGATION_ITEMS = [
     iconInactive: NAVIGATION_ICONS.PROJECTS.inactive,
   },
   {
-    itemId: 5,
+    itemId: 4,
     item: "Contacts",
     iconActive: NAVIGATION_ICONS.CONTACTS.active,
     iconInactive: NAVIGATION_ICONS.CONTACTS.inactive,

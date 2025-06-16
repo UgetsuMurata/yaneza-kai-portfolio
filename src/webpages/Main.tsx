@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import NavigationDisplay from "../component/NavigationDisplay";
 import Home from "../sections/Home";
 import Skills from "../sections/Skills";
@@ -9,6 +9,40 @@ import { NAVIGATION_ITEMS } from "../variables/variables";
 
 export default function Main() {
   const [currentPage, setCurrentPage] = useState(0);
+
+  const [circle1, setCircle1] = useState({
+    position: { x: 50, y: 50 }, // percentage values
+    radius: 5,
+  });
+  const [circle2, setCircle2] = useState({
+    position: { x: 50, y: 50 }, // percentage values
+    radius: 5,
+  });
+
+  // Update circles based on current page
+  useEffect(() => {
+    switch (currentPage) {
+      case 0:
+        setCircle1({ position: { x: 50, y: 50 }, radius: 75 });
+        setCircle2({ position: { x: 150, y: 50 }, radius: 5 });
+        break;
+      case 1:
+        setCircle1({ position: { x: 25, y: 25 }, radius: 40 });
+        setCircle2({ position: { x: 75, y: 75 }, radius: 20 });
+        break;
+      case 2:
+        setCircle1({ position: { x: 2, y: 98 }, radius: 10 });
+        setCircle2({ position: { x: 55, y: 45 }, radius: 75 });
+        break;
+      case 3:
+        setCircle1({ position: { x: 20, y: 20 }, radius: 80 });
+        setCircle2({ position: { x: 80, y: 70 }, radius: 30 });
+        break;
+      default:
+        setCircle1({ position: { x: 150, y: 50 }, radius: 5 });
+        setCircle2({ position: { x: -50, y: 50 }, radius: 40 });
+    }
+  }, [currentPage]);
 
   return (
     <div className="font-content w-full h-screen relative bg-black overflow-hidden">
@@ -24,7 +58,31 @@ export default function Main() {
         {currentPage !== 5 && (
           <div className="absolute inset-0 backdrop-blur-sm z-10" />
         )}
-        <div className="absolute bottom-5 left-1/2 -translate-x-1/2 w-4/5 aspect-square outline-primary outline-[100px] rounded-full bg-transparent z-0" />
+        {/* Dynamic Circle 1 */}
+        <div
+          id="circle-bg-1"
+          className="absolute outline-primary outline-[100px] rounded-full bg-transparent z-0 transition-all duration-1000 ease-in-out"
+          style={{
+            left: `${circle1.position.x}%`,
+            top: `${circle1.position.y}%`,
+            width: `${circle1.radius}vw`,
+            height: `${circle1.radius}vw`,
+            transform: "translate(-50%, -50%)",
+          }}
+        />
+
+        {/* Dynamic Circle 2 */}
+        <div
+          id="circle-bg-2"
+          className="absolute outline-primary outline-[100px] rounded-full bg-transparent z-0 transition-all duration-1000 ease-in-out"
+          style={{
+            left: `${circle2.position.x}%`,
+            top: `${circle2.position.y}%`,
+            width: `${circle2.radius}vw`,
+            height: `${circle2.radius}vw`,
+            transform: "translate(-50%, -50%)",
+          }}
+        />
       </div>
     </div>
   );
